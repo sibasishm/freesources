@@ -1,11 +1,35 @@
 {
   "name": "freesources",
   "version": "0.1.0",
+  "description": "A free video course for building static and server-side rendered applications with Next.js and React.",
   "private": true,
+  "author": {
+    "name": "Siabsish Mohanty",
+    "email": "siabsish.business@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Siabsish19/freesources.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "npm run lint",
+    "lint": "eslint . --ext .json --ext .js",
+    "prettier": "prettier --write \"**/*.{html,js,md,yml}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,js,md,yml}": [
+      "npm run prettier",
+      "npm run lint"
+    ]
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.6",
@@ -14,5 +38,12 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-get-off-my-lawn": "^5.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   }
 }
