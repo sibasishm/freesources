@@ -1,8 +1,10 @@
 import Link from 'next/link';
+import Header from '../components/ui/Header';
 
 export default function Index({ breeds }) {
 	return (
 		<div>
+			<Header />
 			<h1>List of all dog breeds</h1>
 			<div>
 				{breeds.status === 'success' ? (
