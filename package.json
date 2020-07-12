@@ -18,7 +18,11 @@
     "start": "next start",
     "test": "npm run lint",
     "lint": "eslint . --ext .json --ext .js",
-    "prettier": "prettier --write \"**/*.{html,js,md,yml}\""
+    "prettier": "prettier --write \"**/*.{html,js,md,yml}\"",
+    "db": "prisma studio --experimental",
+    "db-save": "prisma migrate save --experimental",
+    "db-up": "prisma migrate up --experimental",
+    "generate": "prisma generate"
   },
   "husky": {
     "hooks": {
@@ -32,14 +36,14 @@
     ]
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.6",
-    "@next/mdx": "^9.4.4",
+    "@prisma/client": "^2.2.0",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.2.0",
     "eslint": "^7.4.0",
     "eslint-config-get-off-my-lawn": "^5.0.1",
     "husky": "^4.2.5",
